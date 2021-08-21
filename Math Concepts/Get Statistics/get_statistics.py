@@ -11,9 +11,10 @@ def get_statistics(input_list):
 
     stats["mean"] = sum(input_list) / len(input_list)
 
+    input_list.sort()
     if len(input_list) % 2 == 0:
-        stats["median"] = (input_list[len(input_list)/2 - 1] +
-                           input_list[len(input_list)/2]) / 2.0
+        stats["median"] = (input_list[int(len(input_list)/2 - 1)] +
+                           input_list[int(len(input_list)/2)]) / 2.0
     else:
         stats["median"] = input_list[len(input_list)/2]
     return stats
